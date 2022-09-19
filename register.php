@@ -10,6 +10,7 @@
 <?php
     if(isset($_POST['verify'])){
         $user_error1 = "";
+        $encrypt1 = md5($pass1, $pass2);
         $username = $_POST['username'];
         if(strlen($username) < 6){
             $user_error1 = "The username must not be less than six characters";
@@ -52,8 +53,8 @@
         </div>
        <?php
            if(isset($username)) echo "<p>$username</p>";
-           if(isset($pass1)) echo "<p>$pass1</p>";
-           if(isset($pass2)) echo "<p>$pass2</p>";
+           if(isset($pass1)) echo "<p>$encrypt1</p>";
+           if(isset($pass2)) echo "<p>$encrypt1</p>";
            if(isset($email)) echo "<p class='p'>$email</p>";
        ?>
     </form>

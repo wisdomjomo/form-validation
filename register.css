@@ -23,21 +23,34 @@ div{
 input[type=password]{
     width: 100%;
     height: 30px;
+    outline: none;
+    border: 1px solid black;
+    margin-top: 5px;
+    padding-left: 15px;
 }
 
 input[type=text]{
     width: 100%;
     height: 30px;
+    margin-top: 5px;
+    outline: none;
+    border: 1px solid black;
+    padding-left: 15px;
 }
 
 input[type=email]{
     width: 100%;
     height: 30px;
+    margin-top: 5px;
+    outline: none;
+    border: 1px solid black;
+    padding-left: 15px;
 }
 
 input[type=submit]{
     width: 30%;
     height: 30px;
+    cursor: pointer;
 }
 
 .submit{
@@ -55,4 +68,13 @@ p{
     padding-left: 30px;
     padding-bottom: 20px;
     color: red;
+}
+
+@media screen and (max-width: 900px) {
+    form{
+        width: 100%;
+        margin-top: 0;
+        margin-left: 0;
+    }
+    
 }
