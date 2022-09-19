@@ -10,7 +10,6 @@
 <?php
     if(isset($_POST['verify'])){
         $user_error1 = "";
-        $encrypt1 = md5($pass1, $pass2);
         $username = $_POST['username'];
         if(strlen($username) < 6){
             $user_error1 = "The username must not be less than six characters";
@@ -19,6 +18,7 @@
         }
         $pass1 = $_POST ['pass1'];
         $pass2 = $_POST ['pass2'];
+        $encrypt1 = md5($pass1, $pass2);
         if(strlen($pass1 != $pass2)){
             $user_error = "Your password does not match";  
         }
