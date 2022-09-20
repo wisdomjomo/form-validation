@@ -31,20 +31,20 @@
     <form action="" method="Post">
         <div>
         <label for="">User Name</label> <br>
-        <input type="text" name="username"> 
+        <input type="text" name="username" required> 
         <span><?php if(isset($user_error1)) echo $user_error1; ?></span>  <br>
         </div>
         <div>
         <label for="">Enter Email</label> <br>
-        <input type="email" name="email"> 
+        <input type="email" name="email" required> 
         </div>
         <div>
         <label for="">Password</label> <br>
-        <input type="password" name="pass1"> 
+        <input type="password" name="pass1" required> 
         </div>
         <div>
         <label for="">Confirm Password</label> <br>
-        <input type="password" name="pass2"> 
+        <input type="password" name="pass2" required> 
         <span><?php if(isset($user_error))
         echo $user_error; ?></span> <br>
         </div>
@@ -58,6 +58,5 @@
            if(isset($email)) echo "<p class='p'>$email</p>";
        ?>
     </form>
-
 </body>
 </html>

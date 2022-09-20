@@ -9,7 +9,7 @@ body{
 }
 
 form{
-    margin-top: 10%;
+    margin-top: 6%;
     width: 40%;
     height: auto;
     margin-left: 30%;
@@ -58,6 +58,7 @@ input[type=submit]{
 }
 span{
     color: red;
+    padding-left: 5px;
 }
 
 p{
