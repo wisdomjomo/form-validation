@@ -9,20 +9,25 @@
 <body>
 <?php
     if(isset($_POST['verify'])){
-        $user_error1 = "";
+        $is_error = false;
+        $user_error = "";
         $username = $_POST['username'];
         if(strlen($username) < 6){
-            $user_error1 = "The username must not be less than six characters";
+            $user_error = "The username must not be less than six characters";
+            $is_error = true;
         } else {
-            $user_error1 ="";
+            $user_error ="";
+            $is_error = false;
         }
         $pass1 = $_POST ['pass1'];
         $pass2 = $_POST ['pass2'];
         $encrypt1 = md5($pass1, $pass2);
         if(strlen($pass1 != $pass2)){
-            $user_error = "Your password does not match";  
+            $user_error = "Your password does not match"; 
+            $is_error = true; 
         }
         else {
+            $is_error = false;
             $user_error ="";
         }
         $email = $_POST ['email'];
@@ -32,7 +37,7 @@
         <div>
         <label for="">User Name</label> <br>
         <input type="text" name="username" required> 
-        <span><?php if(isset($user_error1)) echo $user_error1; ?></span>  <br>
+        <span><?php if(isset($user_error)) echo $user_error; ?></span>  <br>
         </div>
         <div>
         <label for="">Enter Email</label> <br>
@@ -52,10 +57,12 @@
         <input type="submit" name="verify" value="Register">  
         </div>
        <?php
+           if(isset($is_error)  && $is_error === false) { 
            if(isset($username)) echo "<p>$username</p>";
            if(isset($pass1)) echo "<p>$encrypt1</p>";
            if(isset($pass2)) echo "<p>$encrypt1</p>";
            if(isset($email)) echo "<p class='p'>$email</p>";
+        } 
        ?>
     </form>
 </body>
