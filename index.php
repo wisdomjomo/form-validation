@@ -13,10 +13,10 @@
         $user_error = "";
         $username = $_POST['username'];
         if(strlen($username) < 6){
-            $user_error = "The username must not be less than six characters";
+            $user_error1 = "The username must not be less than six characters";
             $is_error = true;
         } else {
-            $user_error ="";
+            $user_error1 ="";
             $is_error = false;
         }
         $pass1 = $_POST ['pass1'];
@@ -37,7 +37,7 @@
         <div>
         <label for="">User Name</label> <br>
         <input type="text" name="username" required> 
-        <span><?php if(isset($user_error)) echo $user_error; ?></span>  <br>
+        <span><?php if(isset($user_error1)) echo $user_error1; ?></span>  <br>
         </div>
         <div>
         <label for="">Enter Email</label> <br>
